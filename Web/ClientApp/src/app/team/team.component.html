@@ -1,0 +1,58 @@
+<section id="cover">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">{{team.teamName}}</h1>
+                </div>
+                <div class="px-15">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9">
+                                <p class="rounded" 
+                                style="font-weight: bold; 
+                                background-color: #f8dcdd;
+                                border: 0.15rem solid black;
+                                padding: 8px;">
+                                    Thank you for registering for the Cupcheck Cancer Tournament!! If you selected to pay later,
+                                    please remember to bring a check or cash the day of the tournament. Teams must be paid in full
+                                    before their first game otherwise they will not be able to play. Updates to this page will be 
+                                    forthcoming. They will provide day of details for the tournament. Please check your registration
+                                    info below to make sure everything is accurate as players must check in the day of the tournament.
+                                    If you have any questions, please don't hesitate to e-mail us at <a href="mailto:cupcheckcancer@gmail.com?Subject=Team%20Page" target="_top">cupcheckcancer@gmail.com</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <table class="registered-team-table rounded">
+                            <caption>Your Team</caption>
+                            <tr>
+                                <th></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                            </tr>
+                            <tbody>
+                                <tr *ngFor="let user of team.users">
+                                    <td *ngIf="user.firstName == team.captainUser.firstName; else notCaptain">Team Captain:</td>
+                                    <td>{{user.firstName}}</td>
+                                    <td>{{user.lastName}}</td>
+                                    <td>{{user.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #notCaptain>
+    <td></td>
+</ng-template>

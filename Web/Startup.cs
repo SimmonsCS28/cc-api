@@ -34,6 +34,8 @@ namespace Web
                     });
             });
 
+            services.AddSpaStaticFiles(configuration =>            {                configuration.RootPath = "ClientApp/dist/cc-client";            });
+
             services.Configure<MvcOptions>(options =>
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory("AllowMyOrigin"));
@@ -50,7 +52,12 @@ namespace Web
             }
 
             app.UseCors("AllowMyOrigin");
-            app.UseMvc();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+            app.UseMvc(routes =>            {                routes.MapRoute(                    name: "api",                    template: "api/{controller}/{action}/{id?}");            });
+
+            app.UseSpa(spa =>            {                spa.Options.SourcePath = "ClientApp";                if (env.IsDevelopment())                {                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");                }            }
+);
         }
     }
 }

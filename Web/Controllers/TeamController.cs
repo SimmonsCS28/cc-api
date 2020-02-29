@@ -2,7 +2,6 @@
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Service;
-using System.Web.Http.Cors;
 using Web.Models;
 using Web.Transformers;
 

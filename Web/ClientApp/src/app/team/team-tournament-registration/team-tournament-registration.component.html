@@ -1,0 +1,213 @@
+<section id="cover">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Team Registration</h1>
+                    <div class="px-15">
+                        <form [formGroup]="teamRegistrationForm" class="registration-form justify-content-center" (ngSubmit)="onRegister(teamRegistrationForm.value)">
+                            <div class="container">
+                                <div class="row justify-content-center" style="margin-top: 25px;">
+                                        <p class="rounded"  
+                                        style="font-weight: bold;">
+                                            BEFORE REGISTERING PLEASE VISIT THE TOURNAMENT PAGE AND READ ALL THE TOURNAMENT INFO AND RULES!!
+                                        </p>                                        
+                                            
+                                </div>
+                                <div class="row justify-content-center" style="margin-top: 10px;">
+                                    
+                                    <div class="col-md-9">
+                                        <p class="rounded" 
+                                        style="font-weight: bold; 
+                                        background-color: #f8dcdd;
+                                        border: 0.15rem solid black;
+                                        padding: 8px;">
+                                            To register, fill out the form below being sure to include the e-mail addresses of each team member 
+                                            as schedules and day-of-tournament info will be sent out via e-mail.  
+                                            A minimum of five players is needed including the team captain.  
+                                            If you have any questions, please contact us at <a href="mailto:cupcheckcancer@gmail.com?Subject=Registration%20Page" target="_top">cupcheckcancer@gmail.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="team-name">Team Name</label>
+                                    </div>
+                                    <div class="col">
+                                        <input id="team-name" name="team-name" type="text" 
+                                        formControlName="team-name" placeholder="Fresh Prince of Briere" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Team Captain">Team Captain</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="team-captain-first-name" name="Team Captain First Name" type="text" 
+                                        formControlName="team-captain-first-name" placeholder="First Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="team-captain-last-name" name="Team Captain Last Name" type="text" 
+                                        formControlName="team-captain-last-name" placeholder="Last Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="team-captain-email" name="Team Captain Email" type="text" 
+                                        formControlName="team-captain-email" placeholder="jane.doe@email.com" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Player 1">Player 2</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id=" " name="Player 2 First Name" type="text" 
+                                        formControlName="player2-first-name" placeholder="First Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player2-last-name" name="Player 2 Last Name" type="text" 
+                                        formControlName="player2-last-name" placeholder="Last Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player2-email" name="Player 2 Email" type="text" 
+                                        formControlName="player2-email" placeholder="jane.doe@email.com" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Player 3">Player 3</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="player3-first-name" name="Player 3 First Name" type="text" 
+                                        formControlName="player3-first-name" placeholder="First Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player3-last-name" name="Player 3 Last Name" type="text" 
+                                        formControlName="player3-last-name" placeholder="Last Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player3-email" name="Player 3 Email" type="text" 
+                                        formControlName="player3-email" placeholder="jane.doe@email.com" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Player 4">Player 4</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="player4-first-name" name="Player 4 First Name" type="text" 
+                                        formControlName="player4-first-name" placeholder="First Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player4-last-name" name="Player 4 Last Name" type="text" 
+                                        formControlName="player4-last-name" placeholder="Last Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player4-email" name="Player 4 Email" type="text" 
+                                        formControlName="player4-email" placeholder="jane.doe@email.com" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Player 5">Player 5</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="player5-first-name" name="Player 5 First Name" type="text" 
+                                        formControlName="player5-first-name" placeholder="First Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player5-last-name" name="Player 5 Last Name" type="text" 
+                                        formControlName="player5-last-name" placeholder="Last Name" class="form-control input-md" required="">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player5-email" name="Player 5 Email" type="text" 
+                                        formControlName="player5-email" placeholder="jane.doe@email.com" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Player 6">Player 6</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="player6-first-name" name="Player 6 First Name" type="text" 
+                                        formControlName="player6-first-name" placeholder="First Name" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player6-last-name" name="Player 6 Last Name" type="text" 
+                                        formControlName="player6-last-name" placeholder="Last Name" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player6-email" name="Player 6 Email" type="text" 
+                                        formControlName="player6-email" placeholder="jane.doe@email.com" class="form-control input-md">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Player 7">Player 7</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="player7-first-name" name="Player 7 First Name" type="text" 
+                                        formControlName="player7-first-name" placeholder="First Name" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player7-last-name" name="Player 7 Last Name" type="text" 
+                                        formControlName="player7-last-name" placeholder="Last Name" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <input id="player7-email" name="Player 7 Email" type="text" 
+                                        formControlName="player7-email" placeholder="jane.doe@email.com" class="form-control input-md">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col">
+                                            <h1><label class="control-label" for="Registration Submit">Submit Registration</label></h1>
+                                        </div> 
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-10">
+                                            <p class="text-center p-5 rounded" 
+                                            style="font-size: large; 
+                                            font-weight: bold; 
+                                            background-color: #f8dcdd;
+                                            border: 0.15rem solid black;
+                                            padding: 8px;">
+                                                Payment MUST be made before a team is allowed to play.  Scheduling priority will be given to those 
+                                                teams that pay in advance.  You may choose to submit your registration and pay now via PayPal.  
+                                                If paying later, please use PayPal or Venmo.  If you prefer to pay by check, make the check 
+                                                out to Cole Simmons with "Cupcheck Cancer Tournament" in the memo and bring it to the tournament.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col"> 
+                                            <button id="pay-now-submit" name="Registration Pay Now Submit" class="btn btn-primary" (click)="setPaymentTermPaidUponRegistering()">Register & Pay Via PayPal</button>
+                                            <button id="pay-later-submit" name="Registration Pay Later Submit" class="btn btn-primary" (click)="setPaymentTermPayLater()">Register & Pay Later</button>
+                                            <button id="clear-registration-form" name="Clear Registration Form" class="btn btn-secondary" (click)="reset()">Clear Form</button> 
+                                        </div>
+                                    </div>    
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a   href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VMVY6WHE56Y5Q" target="_blank"></a>
+</section>
