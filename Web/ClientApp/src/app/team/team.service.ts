@@ -17,7 +17,7 @@ export class TeamService {
     }
 
     getTeam(id: number) {
-        const url: string = this.localApiBaseUrl + 'team/' + id.toString();
+        const url: string = this.apiBaseUrl + 'team/' + id.toString();
         return this.http.get(url)
         .pipe(
             map((data: Team) => {
@@ -29,7 +29,7 @@ export class TeamService {
     }
 
     registerTeam(team: Team): Observable<Object>{
-        const url: string = this.localApiBaseUrl + 'team/'
+        const url: string = this.apiBaseUrl + 'team/'
         console.log(JSON.stringify(team));
         return this.http.post(url, JSON.stringify(team), {
             headers: new HttpHeaders({
