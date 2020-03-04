@@ -1,0 +1,28 @@
+<section id="cover">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Registered Teams</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <table class="registered-team-table rounded">
+                            <caption>Teams</caption>
+                            <tr>
+                                <th>Team Name</th>
+                            </tr>
+                            <tbody>
+                                <tr *ngFor="let team of teams">
+                                    <td>{{team.teamName}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -5,6 +5,7 @@ using DataAccess;
 using Domain;
 using Domain.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace Service
 {
@@ -20,6 +21,18 @@ namespace Service
             _teamDao = new TeamDao();
             _userDao = new UserDao();
             _tournamentDao = new TournamentDao();
+        }
+
+        public List<Team> GetAllTeams()
+        {
+            var teams = _teamDao.GetAllTeams();
+            foreach(Team team in teams)
+            {
+                User captain = _userDao.GetUserById(team.CaptainUserId);
+                //team.CaptainUser = captain;
+            }
+
+            return teams;
         }
 
         public Team GetTeamById(int teamId)

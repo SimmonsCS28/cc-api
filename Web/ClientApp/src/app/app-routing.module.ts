@@ -7,6 +7,7 @@ import { UserVolunteerRegistrationComponent } from './user/user-volunteer-regist
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 import { TeamComponent } from './team/team.component';
 import { TournamentComponent } from './tournament/tournament.component';
+import { RegisteredTeamsComponent } from './tournament/registered-teams/registered-teams.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'tournament',
     component: TournamentComponent
+  },
+  {
+    path: 'registered-teams',
+    component: RegisteredTeamsComponent
   },
   {
     path: 'user-registration',
