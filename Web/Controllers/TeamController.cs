@@ -43,7 +43,7 @@ namespace Web.Controllers
         public IActionResult Post([FromBody]TeamRegistrationModel teamRegistrationModel)
         {
             
-            var teamCaptainUser = PlayerRegistrationModelTransformer.TransformPlayerToUser(teamRegistrationModel.TeamCaptain);
+            var teamCaptainUser = PlayerRegistrationModelTransformer.TransformPlayerToUser(teamRegistrationModel.CaptainUser);
             var teamCaptain = _userService.CreateUser(teamCaptainUser);
 
             var team = TeamRegistrationModelTransfomer.TranformerRegistrationModelToTeam(teamRegistrationModel, teamCaptain.UserId);
@@ -52,7 +52,7 @@ namespace Web.Controllers
 
             _userService.UpdateTeamCaptainTeamId(team.TeamId, teamCaptain.UserId);
 
-            team.Users = PlayerRegistrationModelTransformer.TransformPlayersToUsers(teamRegistrationModel.Players);
+            team.Users = PlayerRegistrationModelTransformer.TransformPlayersToUsers(teamRegistrationModel.Users);
 
             var insertedPlayers = _userService.InsertTeamPlayers(team);
 

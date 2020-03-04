@@ -6,8 +6,8 @@ namespace Web.Models
     public class TeamRegistrationModel
     {
         public string TeamName { get; set; }
-        public PlayerRegistrationModel TeamCaptain { get; set; }
-        public List<PlayerRegistrationModel> Players { get; set; }
+        public PlayerRegistrationModel CaptainUser { get; set; }
+        public List<PlayerRegistrationModel> Users { get; set; }
         public PaymentTerm PaymentTerm { get; set; }
     }
 }

@@ -63,7 +63,7 @@ export class TeamTournamentRegistrationComponent implements OnInit {
     teamCaptain.firstName = form.controls['team-captain-first-name'].value;
     teamCaptain.lastName = form.controls['team-captain-last-name'].value;
     teamCaptain.email = form.controls['team-captain-email'].value;
-    team.teamCaptain = teamCaptain;
+    team.captainUser = teamCaptain;
 
     var user2: User = new User();
     user2.firstName = form.controls['player2-first-name'].value;
@@ -110,7 +110,7 @@ export class TeamTournamentRegistrationComponent implements OnInit {
           players.push(user7);
     }
 
-    team.players = players;
+    team.users = players;
     team.paymentTerm = this.paymentTerm;
   }
 
