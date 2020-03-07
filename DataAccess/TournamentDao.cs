@@ -77,7 +77,26 @@ namespace DataAccess
             }
         }
 
-        
+        public Tournament GetCurrentTournamentInfo()
+        {
+            var sql = @"SELECT
+                        U.TournamentId,
+                        U.TournamentScheduleId,
+                        U.TournamentStartDate,
+                        U.TournamentEndDate,
+                        U.TournamentMaxTeams,
+                        U.TournamentFeeAmount,
+                        U.CurrentActiveTournament
+                        FROM dbo.[Tournament] U
+                        WHERE U.CurrentActiveTournament = 1";
+
+            using (var db = InitializeFactory().GetDatabase())
+            {
+                return db.SingleOrDefault<Tournament>(sql);
+            }
+        }
+
+
         public int GetTournamentIdByNextStartDate()
         {
             var sql = @""; //TODO write SQL SELECT to retrieve the next upcoming tournament id
