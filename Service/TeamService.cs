@@ -44,6 +44,16 @@ namespace Service
             return team;
         }
 
+        public List<Team> GetCurrentTournamentRegisteredTeams(int currentTournamentId)
+        {
+            var currentRegisteredTeams = _teamDao.GetAllTeamsByTournamentId(currentTournamentId);
+            foreach (Team team in currentRegisteredTeams)
+            {
+                PopulateUsers(team);
+            }
+            return currentRegisteredTeams;
+        }
+
         public Team RegisterTeam(Team team)
         {
             
@@ -76,5 +86,6 @@ namespace Service
         {
             team.TournamentId = _tournamentDao.GetTournamentIdByNextStartDate();
         }
+
     }
 }

@@ -29,7 +29,7 @@ namespace DataAccess
             }
         }
 
-        public List<Tournament> GetTournamentsByTeamId(int teamId)
+        public List<Tournament> GetCurrentTournamentRegisteredTeams()
         {
             var sql = @"SELECT 
                         U.TournamentId,
@@ -49,7 +49,7 @@ namespace DataAccess
 
             using (var db = InitializeFactory().GetDatabase())
             {
-                return db.Fetch<Tournament>(sql, teamId);
+                return db.Fetch<Tournament>(sql);
             }
         }
 
@@ -94,6 +94,18 @@ namespace DataAccess
             {
                 return db.SingleOrDefault<Tournament>(sql);
             }
+        }
+
+        public int GetCurrentTournamentId()
+        {
+            var sql = @"SELECT
+                        U.TournamentId
+                        FROM dbo.[Tournament] U
+                        WHERE U.CurrentActiveTournament = 1";
+            using (var db = InitializeFactory().GetDatabase())
+            {
+                return db.SingleOrDefault<int>(sql);
+            };
         }
 
 

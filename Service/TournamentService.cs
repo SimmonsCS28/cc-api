@@ -1,4 +1,5 @@
-﻿using DataAccess;
+﻿using System;
+using DataAccess;
 using Domain;
 
 namespace Service
@@ -8,12 +9,14 @@ namespace Service
         private readonly TeamDao _teamDao;
         private readonly UserDao _userDao;
         private readonly TournamentDao _tournamentDao;
+        private readonly TeamService _teamService;
 
         public TournamentService()
         {
             _teamDao = new TeamDao();
             _userDao = new UserDao();
             _tournamentDao = new TournamentDao();
+            _teamService = new TeamService();
         }
 
         public Tournament GetCurrentTournamentInfo()
@@ -30,6 +33,12 @@ namespace Service
             }
             
             return tournmaent;
+        }
+
+        public object GetCurrentTournamentRegisteredTeams()
+        {
+            int tournamentId = _tournamentDao.GetCurrentTournamentId();
+            return _teamService.GetCurrentTournamentRegisteredTeams(tournamentId);
         }
     }
 }

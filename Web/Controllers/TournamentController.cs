@@ -28,5 +28,12 @@ namespace Web.Controllers
             var tournament = _tournamentService.GetCurrentTournamentInfo();
             return Ok(tournament);
         }
+
+        [HttpGet("{activeIndicator}/teams")]
+        public IActionResult Get(int activeIndicator)
+        {
+            var teams = _tournamentService.GetCurrentTournamentRegisteredTeams();
+            return Ok(teams);
+        }
     }
 }
