@@ -10,13 +10,17 @@ namespace Domain
     {
         [ResultColumn]
         public int TournamentId { get; set; }
-        public int ScheduleId { get; set; }
+        public int TournamentScheduleId { get; set; }
         public DateTime TournamentStartDate { get; set; }
         public DateTime TournamentEndDate { get; set; }
-        public int MaxTeams { get; set; }
-        public decimal FeeAmount { get; set; }
+        public int TournamentMaxTeams { get; set; }
+        public decimal TournamentFeeAmount { get; set; }
+        public int CurrentActiveTournament { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime LastModifiedDate { get; set; }
         public int LastModifiedUserId { get; set; }
+
+        [Ignore]
+        public List<Team> Teams { get; set; }
     }
 }

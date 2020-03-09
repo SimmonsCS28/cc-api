@@ -26,9 +26,17 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var tournamentTeams = _teamDao.GetAllTeams();
-            return Ok(tournamentTeams);
+            var teams = _teamService.GetAllTeams();
+            return Ok(teams);
         }
+
+        // GET api/values/1
+        //[HttpGet("{tournamentId}")]
+        //public IActionResult Get(int id)
+        //{
+        //    var tournamentTeams = _teamDao.GetAllTeamsByTournamentId(id);
+        //    return Ok(tournamentTeams);
+        //}
 
         // GET api/values/5
         [HttpGet("{id}")]

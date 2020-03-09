@@ -16,6 +16,18 @@ export class TeamService {
         this.localApiBaseUrl = 'http://localhost:56759/api/';
     }
 
+    getAllTeams() {
+        const url: string = this.localApiBaseUrl + 'team/';
+        return this.http.get(url)
+        .pipe(
+            map((data: Team) => {
+                return data;
+            }), catchError( error =>  {
+                return throwError('There was an error retrieving your team.');
+            })
+        );
+    }
+
     getTeam(id: number) {
         const url: string = this.localApiBaseUrl + 'team/' + id.toString();
         return this.http.get(url)

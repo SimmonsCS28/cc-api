@@ -5,6 +5,7 @@ using DataAccess;
 using Domain;
 using Domain.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace Service
 {
@@ -22,6 +23,18 @@ namespace Service
             _tournamentDao = new TournamentDao();
         }
 
+        public List<Team> GetAllTeams()
+        {
+            var teams = _teamDao.GetAllTeams();
+            foreach(Team team in teams)
+            {
+                User captain = _userDao.GetUserById(team.CaptainUserId);
+                //team.CaptainUser = captain;
+            }
+
+            return teams;
+        }
+
         public Team GetTeamById(int teamId)
         {
             var team = _teamDao.GetTeamById(teamId);
@@ -29,6 +42,16 @@ namespace Service
             PopulateUsers(team);
 
             return team;
+        }
+
+        public List<Team> GetCurrentTournamentRegisteredTeams(int currentTournamentId)
+        {
+            var currentRegisteredTeams = _teamDao.GetAllTeamsByTournamentId(currentTournamentId);
+            foreach (Team team in currentRegisteredTeams)
+            {
+                PopulateUsers(team);
+            }
+            return currentRegisteredTeams;
         }
 
         public Team RegisterTeam(Team team)
@@ -63,5 +86,6 @@ namespace Service
         {
             team.TournamentId = _tournamentDao.GetTournamentIdByNextStartDate();
         }
+
     }
 }

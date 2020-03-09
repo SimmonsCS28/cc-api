@@ -25,6 +25,26 @@ namespace DataAccess
             }
         }
 
+        public List<Team> GetAllTeamsByTournamentId(int id)
+        {
+            var sql = @"SELECT 
+                        T.TeamId,
+                        T.TournamentId,
+                        T.CaptainUserId,
+                        T.TeamName,
+                        T.PaymentTerm,
+                        T.PaymentDate,
+                        T.PaymentMethod,
+                        T.RegistrationDate
+                        FROM dbo.Team T
+                        WHERE T.TournamentId = @0";
+
+            using (var db = InitializeFactory().GetDatabase())
+            {
+                return db.Fetch<Team>(sql, id);
+            }
+        }
+
         public Team GetTeamById(int id)
         {
             var sql = @"SELECT  T.TeamId

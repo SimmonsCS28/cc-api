@@ -29,7 +29,7 @@ namespace DataAccess
             }
         }
 
-        public List<Tournament> GetTournamentsByTeamId(int teamId)
+        public List<Tournament> GetCurrentTournamentRegisteredTeams()
         {
             var sql = @"SELECT 
                         U.TournamentId,
@@ -49,7 +49,7 @@ namespace DataAccess
 
             using (var db = InitializeFactory().GetDatabase())
             {
-                return db.Fetch<Tournament>(sql, teamId);
+                return db.Fetch<Tournament>(sql);
             }
         }
 
@@ -77,7 +77,38 @@ namespace DataAccess
             }
         }
 
-        
+        public Tournament GetCurrentTournamentInfo()
+        {
+            var sql = @"SELECT
+                        U.TournamentId,
+                        U.TournamentScheduleId,
+                        U.TournamentStartDate,
+                        U.TournamentEndDate,
+                        U.TournamentMaxTeams,
+                        U.TournamentFeeAmount,
+                        U.CurrentActiveTournament
+                        FROM dbo.[Tournament] U
+                        WHERE U.CurrentActiveTournament = 1";
+
+            using (var db = InitializeFactory().GetDatabase())
+            {
+                return db.SingleOrDefault<Tournament>(sql);
+            }
+        }
+
+        public int GetCurrentTournamentId()
+        {
+            var sql = @"SELECT
+                        U.TournamentId
+                        FROM dbo.[Tournament] U
+                        WHERE U.CurrentActiveTournament = 1";
+            using (var db = InitializeFactory().GetDatabase())
+            {
+                return db.SingleOrDefault<int>(sql);
+            };
+        }
+
+
         public int GetTournamentIdByNextStartDate()
         {
             var sql = @""; //TODO write SQL SELECT to retrieve the next upcoming tournament id
