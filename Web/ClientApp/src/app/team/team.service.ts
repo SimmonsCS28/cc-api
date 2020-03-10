@@ -8,14 +8,9 @@ import { environment } from '../../environments/environment'
 
 @Injectable({providedIn: 'root'})
 export class TeamService {
-
-    private readonly apiBaseUrl: string;
-    private readonly localApiBaseUrl: string;
     private readonly APIEndpoint = environment.APIEndpoint;
 
     constructor(private http: HttpClient) {
-        this.apiBaseUrl = 'https://cupcheckcancer.azurewebsites.net/api/';
-        this.localApiBaseUrl = 'http://localhost:56759/api/';
     }
 
     getAllTeams() {
