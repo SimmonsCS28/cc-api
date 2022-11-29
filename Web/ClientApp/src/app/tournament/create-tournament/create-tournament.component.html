@@ -6,7 +6,6 @@
                     <h1 class="display-4 py-2 text-truncate">Create Tournamnet</h1>
                     <div class="px-15">
                         <form [formGroup]="createTournamentForm" class="tournament-form justify-content-center" (ngSubmit)="onCreate()">
-                            </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -48,6 +47,7 @@
                                     <div class="col">
                                         <input id="tournament-length" name="tournmanet-length" type="text" 
                                         formControlName="tounament-length" placeholder="1" class="form-control input-md" required="">
+                                    </div>
                                 </div>
                             </div>
                             <div class="container">
