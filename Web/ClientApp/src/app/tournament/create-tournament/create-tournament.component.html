@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="mx-auto text-center form p-4">
-                    <h1 class="display-4 py-2 text-truncate">Create Tournamnet</h1>
+                    <h1 class="display-4 py-2 text-truncate">Create Tournament</h1>
                     <div class="px-15">
                         <form [formGroup]="createTournamentForm" class="tournament-form justify-content-center" (ngSubmit)="onCreate()">
                             <div class="form-group">
@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col">
-                                        <label class="control-label" for="Tournament Length">Tournament Length</label>  
+                                        <label class="control-label" for="Tournament Length">Tournament Length (in days)</label>  
                                     </div>
                                     <div class="col">
                                         <input id="tournament-length" name="tournmanet-length" type="text" 
