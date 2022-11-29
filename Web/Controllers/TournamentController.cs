@@ -1,10 +1,12 @@
 ﻿using DataAccess;
+using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web.Models;
 
 namespace Web.Controllers
 {
@@ -34,6 +36,12 @@ namespace Web.Controllers
         {
             var teams = _tournamentService.GetCurrentTournamentRegisteredTeams();
             return Ok(teams);
+        }
+
+        [HttpPost("new-tournmanet")]
+        public IActionResult Post(Tournament tournament)
+        {
+            return Ok(_tournamentService.createNewTournament(tournament));
         }
     }
 }

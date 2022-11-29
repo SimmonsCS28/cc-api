@@ -19,6 +19,11 @@ namespace Service
             _teamService = new TeamService();
         }
 
+        public object createNewTournament(Tournament tournament)
+        {
+            throw new NotImplementedException();
+        }
+
         public Tournament GetCurrentTournamentInfo()
         {
             var tournmaent = _tournamentDao.GetCurrentTournamentInfo();
