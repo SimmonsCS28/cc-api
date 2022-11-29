@@ -15,6 +15,7 @@ import { UserVolunteerRegistrationComponent } from './user/user-volunteer-regist
 import { RouterModule } from '@angular/router';
 import { TournamentComponent } from './tournament/tournament.component';
 import { RegisteredTeamsComponent } from './tournament/registered-teams/registered-teams.component';
+import { CreateTournamentComponent } from './tournament/create-tournament/create-tournament.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisteredTeamsComponent } from './tournament/registered-teams/register
     HttpComponent,
     UserVolunteerRegistrationComponent,
     TournamentComponent,
-    RegisteredTeamsComponent
+    RegisteredTeamsComponent,
+    CreateTournamentComponent
   ],
   imports: [
     BrowserModule,

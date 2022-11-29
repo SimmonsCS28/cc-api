@@ -1,0 +1,67 @@
+<section id="cover">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Create Tournamnet</h1>
+                    <div class="px-15">
+                        <form [formGroup]="createTournamentForm" class="tournament-form justify-content-center" (ngSubmit)="onCreate()">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="Maximum Number Of Teams">Maximum Number Of Teams</label>
+                                    </div>
+                                    <div class="col">
+                                        <input id="number-of-teams" name="number-of-teams" type="text" 
+                                        formControlName="number-of-teams" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Registration Fee">Registration Fee</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="registration-fee" name="Team Captain First Name" type="text" 
+                                        formControlName="registration-fee" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Start Date">Start Date</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="start-date" name="start-date" type="text" 
+                                        formControlName="start-date" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="control-label" for="Tournament Length">Tournament Length</label>  
+                                    </div>
+                                    <div class="col">
+                                        <input id="tournament-length" name="tournmanet-length" type="text" 
+                                        formControlName="tounament-length" placeholder="1" class="form-control input-md" required="">
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col"> 
+                                        <button id="create-tournament" name="Create Tournament" class="btn btn-primary" (click)="createTournament()">Save</button>
+                                        <button id="clear-registration-form" name="Clear Registration Form" class="btn btn-secondary" (click)="reset()">Clear</button> 
+                                    </div>
+                                </div>    
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
