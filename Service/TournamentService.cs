@@ -21,6 +21,11 @@ namespace Service
 
         public object createNewTournament(Tournament tournament)
         {
+            Tournament insertedTournament = new Tournament();
+            int activeTournamentId = _tournamentDao.GetCurrentTournamentId();
+            _tournamentDao.SetCurrentTournamentToNotActive(activeTournamentId);
+            insertedTournament = _tournamentDao.InsertTournament(tournament);
+
             throw new NotImplementedException();
         }
 

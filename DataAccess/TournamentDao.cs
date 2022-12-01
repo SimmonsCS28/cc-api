@@ -119,40 +119,49 @@ namespace DataAccess
             }
         }
 
-        public Tournament InsertTournament(Tournament user)
+        public Tournament InsertTournament(Tournament tournament)
         {
-            user.CreationDate = DateTime.UtcNow;
+            tournament.CreationDate = DateTime.UtcNow;
+            tournament.LastModifiedDate= DateTime.UtcNow;
             using (var db = InitializeFactory().GetDatabase())
             {
-                db.Insert(user);
+                db.Insert(tournament);
             }
-            return user;
+            return tournament;
         }
 
-        public List<Tournament> InsertTournament(List<Tournament> users)
+        public void SetCurrentTournamentToNotActive(int activeTournamentId)
+        {
+            using (var db = InitializeFactory().GetDatabase())
+            {
+
+            }
+        }
+
+        public List<Tournament> InsertTournament(List<Tournament> tournaments)
         {
             using (var db = InitializeFactory().GetDatabase())
             {
                 //InsertBulk is for inserting many items at a time
-                db.InsertBulk(users);
+                db.InsertBulk(tournaments);
             }
-            return users;
+            return tournaments;
         }
 
-        public Tournament UpdateTournament(Tournament user)
+        public Tournament UpdateTournament(Tournament tournament)
         {
             using (var db = InitializeFactory().GetDatabase())
             {
-                db.Update(user, new[] { "FirstName", "LastName", "Email" });
+                db.Update(tournament, new[] { "FirstName", "LastName", "Email" });
             }
-            return user;
+            return tournament;
         }
 
-        public void DeleteTournament(int userId)
+        public void DeleteTournament(int tournamentId)
         {
             using (var db = InitializeFactory().GetDatabase())
             {
-                db.Delete(new Tournament { TournamentId = userId });
+                db.Delete(new Tournament { TournamentId = tournamentId });
             }
         }
     }

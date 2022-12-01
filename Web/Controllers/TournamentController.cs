@@ -39,7 +39,7 @@ namespace Web.Controllers
         }
 
         [HttpPost("new-tournmanet")]
-        public IActionResult Post(Tournament tournament)
+        public IActionResult Post([FromBody]Tournament tournament)
         {
             return Ok(_tournamentService.createNewTournament(tournament));
         }
