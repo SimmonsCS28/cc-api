@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-volunteer-registration-form-page',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VolunteerRegistrationFormPageComponent implements OnInit {
 
-  constructor() { }
+  volunteerRegistrationForm: FormGroup;
+
+  constructor(private readonly activatedRoute: ActivatedRoute,
+    private readonly router: Router) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
   }
 
 }
