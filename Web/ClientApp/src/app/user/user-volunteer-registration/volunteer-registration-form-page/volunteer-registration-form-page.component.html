@@ -1,1 +1,124 @@
-<p>volunteer-registration-form-page works!</p>
+<section>
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Volunteer Registration</h1>
+                </div>
+                <div class="col-md-9 mx-auto text-center">
+                    <p class="rounded" 
+                    style="font-weight: bold; 
+                    background-color: #f8dcdd;
+                    border: 0.15rem solid black;
+                    padding: 8px;">
+                        Please fill out the form below to register as a volunteer. You may select multiple roles. 
+                        If you have any questions, please contact us at <a href="mailto:cupcheckcancer@gmail.com?Subject=Registration%20Page" target="_top">cupcheckcancer@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center form p-4">
+                    <div class="px-15">
+                        <form [formGroup]="volunteerRegistrationForm" class="registration-form justify-content-center" (ngSubmit)="onRegister()">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="first-name">First Name</label>
+                                    </div>
+                                    <div class="col">
+                                        <input id="first-name" name="first-name" type="text" 
+                                        formControlName="first-name" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="last-name">Last Name</label>
+                                    </div>
+                                    <div class="col">
+                                        <input id="last-name" name="last-name" type="text" 
+                                        formControlName="last-name" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="email">Email</label>
+                                    </div>
+                                    <div class="col">
+                                        <input id="email" name="email" type="email" 
+                                        formControlName="email" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="control-label" for="phone">Phone</label>
+                                    </div>
+                                    <div class="col">
+                                        <input id="phone" name="phone" type="phone" 
+                                        formControlName="phone" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                </div>
+                                <div class="row" >
+                                    <div class="col-md-3">
+                                        <label class="control-label" style="font-weight: bold;" for="roles">Volunteer Roles</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="ref">Game Ref</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="ref" name="ref" value="ref"
+                                        formControlName="ref" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <label for="checkin">Check-in</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="checkin" name="checkin" value="checkin"
+                                        formControlName="checkin" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <label for="clock">Game Clock</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="clock" name="clock" value="clock"
+                                        formControlName="clock" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <label for="raffle">Raffle</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="clock" name="raffle" value="raffle"
+                                        formControlName="raffle" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <label for="setup">Setup</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="setup" name="setup" value="setup"
+                                        formControlName="setup" class="form-control input-md">
+                                    </div>
+                                    <div class="col">
+                                        <label for="takedown">Takedown</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="takedown" name="takedown" value="takedown"
+                                        formControlName="takedown" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column mx-auto text-center">
+                                        <button id="pay-later-submit" name="Registration Pay Later Submit" class="btn btn-primary" (click)="setPaymentTermPayLater()">Submit</button>
+                                        <button id="clear-registration-form" name="Clear Registration Form" class="btn btn-secondary" (click)="reset()">Reset</button> 
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
