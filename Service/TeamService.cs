@@ -59,8 +59,7 @@ namespace Service
             
             Team insertedTeam = team;
 
-            //TODO retrieve next tournament id for registration
-            team.TournamentId = 2;
+            team.TournamentId = _tournamentDao.GetCurrentTournamentId();
 
             if (team.PaymentTerm.Equals(PaymentTerm.PaidUponRegistering))
             {
