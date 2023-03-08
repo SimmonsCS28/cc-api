@@ -6,9 +6,11 @@ namespace Domain.Enums
 {
     public enum VolunteerType
     {
-        GameOffical = 1,
+        GameMonitor = 1,
         ClockManager = 2,
         RegistrationCheckInTable = 3,
-        DonationRaffleTable = 4
+        DonationRaffleTable = 4,
+        Setup = 8, 
+        Takedown = 9
     }
 }

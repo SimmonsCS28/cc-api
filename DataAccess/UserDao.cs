@@ -133,5 +133,30 @@ namespace DataAccess
             }
         }
 
+        public void InsertVolunteer(User user)
+        {
+            var sql = @"INSERT INTO [User]
+                        (FirstName,
+                         LastName,
+                         Email,
+                         PhoneNumber,
+                         TshirtSize,
+                         VolunteerType,
+                         CreatedDate,
+                         LastModifiedDate)
+                        Values (@0, 
+                                @1, 
+                                @2, 
+                                @3, 
+                                @4, 
+                                @5, 
+                                CURRENT_TIMESTAMP, 
+                                CURRENT_TIMESTAMP)";
+            using(var db = InitializeFactory().GetDatabase)
+            {
+                db.Execute(sql, user.FirstName, user.LastName, user.Email, user.PhoneNumber, user.TshirtSize, user.VolunteerType);
+            }
+        }
+
     }
 }
