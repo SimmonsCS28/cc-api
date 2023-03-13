@@ -1,5 +1,6 @@
 ﻿using Domain;
 using System;
+using System.Collections.Generic;
 using Web.Models;
 
 namespace Web.Transformers
@@ -18,5 +19,7 @@ namespace Web.Transformers
                 VolunteerType = volunteer.VolunteerType
             };
         }
+
+        public static List<User> TransformVolunteerTo
     }
 }

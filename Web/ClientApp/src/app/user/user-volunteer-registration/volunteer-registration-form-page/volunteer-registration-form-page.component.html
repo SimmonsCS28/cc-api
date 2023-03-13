@@ -20,48 +20,58 @@
         <div class="container">
             <div class="row">
                 <div class="mx-auto text-center form p-4">
-                    <div class="px-15">
-                        <form [formGroup]="volunteerRegistrationForm" class="registration-form justify-content-center" (ngSubmit)="onRegister()">
-                            <div class="form-group">
+                    <div>
+                        <form [formGroup]="volunteerRegistrationForm" class="registration-form" (ngSubmit)="onRegister()">
+                            <div class="form-group" style="padding-left: 50px">
+                                <div class="row" >
+                                    <div class="col">
+                                        <h2 class="control-label" style="font-weight: bold; padding: 5%" for="roles">Contact Information</h2>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="control-label" for="first-name">First Name</label>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="padding-bottom: 2%;">
                                         <input id="first-name" name="first-name" type="text" 
-                                        formControlName="first-name" placeholder="" class="form-control input-md" required="">
+                                        formControlName="first-name" placeholder="" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="control-label" for="last-name">Last Name</label>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="padding-bottom: 2%;">
                                         <input id="last-name" name="last-name" type="text" 
-                                        formControlName="last-name" placeholder="" class="form-control input-md" required="">
+                                        formControlName="last-name" placeholder="" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="control-label" for="email">Email</label>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="padding-bottom: 2%;">
                                         <input id="email" name="email" type="email" 
-                                        formControlName="email" placeholder="" class="form-control input-md" required="">
+                                        formControlName="email" placeholder="" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="control-label" for="phone">Phone</label>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="padding-bottom: 2%;">
                                         <input id="phone" name="phone" type="phone" 
-                                        formControlName="phone" placeholder="" class="form-control input-md" required="">
+                                        formControlName="phone" placeholder="" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="row" >
-                                    <div class="col-md-3">
-                                        <label class="control-label" style="font-weight: bold;" for="roles">Volunteer Roles</label>
+                                    <div class="col">
+                                        <h2 class="control-label" style="font-weight: bold; padding:5%" for="roles">Volunteer Roles</h2>
+                                    </div>
+                                </div>
+                                <div class="row" *ngIf="noRoleSelected">
+                                    <div class="col">
+                                        <p class="text-center" style="font-weight: bold; color: red;">Please select at least one role</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -69,48 +79,48 @@
                                         <label for="ref">Game Monitor</label><br>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="ref" name="ref" value="ref"
-                                        formControlName="ref" class="form-control input-md">
+                                        <input type="checkbox" id="game-monitor" name="game-monitor" value="1"
+                                        formControlName="gamemonitor" class="form-control input-md">
                                     </div>
                                     <div class="col">
                                         <label for="checkin">Check-in</label><br>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="checkin" name="checkin" value="checkin"
-                                        formControlName="checkin" class="form-control input-md">
+                                        <input type="checkbox" id="checkin" name="checkin" value="3"
+                                        formControlName="registration" class="form-control input-md">
                                     </div>
                                     <div class="col">
                                         <label for="clock">Game Clock</label><br>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="clock" name="clock" value="clock"
-                                        formControlName="clock" class="form-control input-md">
+                                        <input type="checkbox" id="clock-manager" name="clock-manager" value="2"
+                                        formControlName="clockmanager" class="form-control input-md">
                                     </div>
                                     <div class="col">
                                         <label for="raffle">Raffle</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="clock" name="raffle" value="raffle"
+                                        <input type="checkbox" id="clock" name="raffle" value="4"
                                         formControlName="raffle" class="form-control input-md">
                                     </div>
                                     <div class="col">
                                         <label for="setup">Setup</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="setup" name="setup" value="setup"
+                                        <input type="checkbox" id="setup" name="setup" value="5"
                                         formControlName="setup" class="form-control input-md">
                                     </div>
                                     <div class="col">
                                         <label for="takedown">Takedown</label><br>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="takedown" name="takedown" value="takedown"
+                                        <input type="checkbox" id="takedown" name="takedown" value="6"
                                         formControlName="takedown" class="form-control input-md">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="column mx-auto text-center">
-                                        <button id="pay-later-submit" name="Registration Pay Later Submit" class="btn btn-primary" (click)="setPaymentTermPayLater()">Submit</button>
+                                        <button id="volunteer-reg-form-submit" name="Volunteer Registration Form Submit" class="btn btn-primary">Submit</button>
                                         <button id="clear-registration-form" name="Clear Registration Form" class="btn btn-secondary" (click)="reset()">Reset</button> 
                                     </div>
                                 </div>

@@ -133,7 +133,7 @@ namespace DataAccess
             }
         }
 
-        public void InsertVolunteer(User user)
+        public User InsertVolunteer(User user)
         {
             var sql = @"INSERT INTO [User]
                         (FirstName,
@@ -156,6 +156,7 @@ namespace DataAccess
             {
                 db.Execute(sql, user.FirstName, user.LastName, user.Email, user.PhoneNumber, user.TshirtSize, user.VolunteerType);
             }
+            return user;
         }
 
     }
