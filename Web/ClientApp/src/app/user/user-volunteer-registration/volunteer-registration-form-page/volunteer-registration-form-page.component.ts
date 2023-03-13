@@ -17,5 +17,6 @@ export class VolunteerRegistrationFormPageComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0,0);
   }
+  
 
 }
