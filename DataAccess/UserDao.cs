@@ -6,6 +6,8 @@ namespace DataAccess
 {
     public class UserDao:BaseDao 
     {
+        private readonly TournamentDao _tournamentDao;
+
         public List<User> GetAllUsers()
         {
             var sql = @"SELECT 
@@ -133,7 +135,7 @@ namespace DataAccess
             }
         }
 
-        public User InsertVolunteer(User user)
+        public User InsertVolunteer(User user, List<int> volunteerRoleIds)
         {
             var sql = @"INSERT INTO [User]
                         (FirstName,
@@ -156,6 +158,28 @@ namespace DataAccess
             {
                 db.Execute(sql, user.FirstName, user.LastName, user.Email, user.PhoneNumber, user.TshirtSize, user.VolunteerType);
             }
+
+            int currentTournamentId = _tournamentDao.GetCurrentTournamentId();
+
+            foreach (int id in volunteerRoleIds)
+            {
+                sql = @"INSERT INTO [VolunteerRoleXref]
+                        (UserId,
+                        VolunteerTypeId,
+                        TournamentId,
+                        CreationDate,
+                        LastModifiedDate)
+                        Values (@0,
+                        @1,
+                        @2,
+                        CURRENT_TIMESTAMP,
+                        CURRENT_TIMESTAMP)";
+                using (var db = InitializeFactory().GetDatabase)
+                {
+                    db.Execute(sql, user.UserId, id, currentTournamentId);
+                }
+            }
+
             return user;
         }
 

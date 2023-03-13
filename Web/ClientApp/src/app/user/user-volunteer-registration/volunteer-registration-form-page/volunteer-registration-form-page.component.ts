@@ -98,6 +98,7 @@ export class VolunteerRegistrationFormPageComponent implements OnInit {
       'last-name': new FormControl(null, Validators.required),
       'email': new FormControl(null, Validators.required),
       'phone': new FormControl(null, Validators.required),
+      'tshirtSize': new FormControl(null, Validators.required),
       'gamemonitor': new FormControl(null),
       'registration': new FormControl(null),
       'clockmanager': new FormControl(null),

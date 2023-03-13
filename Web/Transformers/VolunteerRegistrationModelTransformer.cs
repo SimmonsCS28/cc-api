@@ -15,11 +15,8 @@ namespace Web.Transformers
                 LastName = volunteer.LastName,
                 Email = volunteer.Email,
                 PhoneNumber = volunteer.Phone,
-                TshirtSize = volunteer.TshirtSize,
-                VolunteerType = volunteer.VolunteerType
+                TshirtSize = volunteer.TshirtSize
             };
         }
-
-        public static List<User> TransformVolunteerTo
     }
 }

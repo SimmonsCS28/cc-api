@@ -27,7 +27,7 @@ namespace Web.Controllers
 
             User volunteer = VolunteerRegistrationModelTransformer.TransformVolunteerToUser(volunteerRegistrationModel);
 
-            var insertedUser = _userDao.InsertVolunteer(volunteer);
+            var insertedUser = _userDao.InsertVolunteer(volunteer, volunteerRegistrationModel.VolunteerTypeIds);
 
             return Ok(volunteer);
         }
