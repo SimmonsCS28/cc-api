@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Volunteer } from '../../../volunteer/volunteer.model';
 import { VolunteerService } from '../../../volunteer/volunteer.service';
 import { VolunteerType } from '../../../volunteer/volunteerType.model';
-import { VolunteerTypeEnum } from '../../../volunteer/volunteerTypeEnum';
 
 @Component({
   selector: 'app-volunteer-registration-form-page',
@@ -22,7 +21,6 @@ export class VolunteerRegistrationFormPageComponent implements OnInit {
   volunteerRegistrationForm: FormGroup;
   volunteer: Volunteer;
   noRoleSelected: boolean;
-  volunteerTypeEnum: VolunteerTypeEnum;
 
   constructor(private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
