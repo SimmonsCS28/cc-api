@@ -6,7 +6,7 @@ namespace DataAccess
 {
     public class UserDao:BaseDao 
     {
-        private readonly TournamentDao _tournamentDao;
+        private readonly TournamentDao _tournamentDao = new TournamentDao();
 
         public List<User> GetAllUsers()
         {

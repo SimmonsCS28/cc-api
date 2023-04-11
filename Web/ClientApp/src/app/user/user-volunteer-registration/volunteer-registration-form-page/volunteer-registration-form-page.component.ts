@@ -58,6 +58,7 @@ export class VolunteerRegistrationFormPageComponent implements OnInit {
     volunteer.lastName = form.controls['last-name'].value;
     volunteer.email = form.controls['email'].value;
     volunteer.phoneNumber = form.controls['phone'].value;
+    volunteer.tshirtSize = form.controls['tshirtSize'].value;
 
     for (const ctrl in form.controls) {
       console.log(form.controls[ctrl].value)
